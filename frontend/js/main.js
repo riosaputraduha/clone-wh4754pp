@@ -50,7 +50,7 @@ function updateNewsControls() {
 
 function scrollNews(direction) {
   const card = newsCards.querySelector('.news-card');
-  newsCards.scrollBy({ left: direction * (card.getBoundingClientRect().width + 24), behavior: 'smooth' });
+  newsCards.scrollBy({ left: direction * (card.getBoundingClientRect().width + parseFloat(getComputedStyle(newsCards).gap)), behavior: 'smooth' });
 }
 
 newsPrev.addEventListener('click', () => scrollNews(-1));
